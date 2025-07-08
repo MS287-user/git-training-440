@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+  }
+
   return (
     <>
         <div className="p-4 flex justify-between items-center bg-blue-900 text-white">
@@ -26,9 +33,16 @@ const Header = () => {
             </ul>
           </div>
 
-          <div id="nav-toggle" className="md:invisible visible">
+          <div id="nav-toggle" className="md:invisible visible" onClick={handleToggle}>
             <i className="ri-menu-2-line text-2xl text-white"></i>
           </div>
+        </div>
+
+        <div className={`${toggle ? 'block' : 'hidden'} bg-blue-900 text-white text-center md:hidden leading-10`}>
+          <p><Link to='/'>Home</Link></p>
+          <p><Link to='/about'>About</Link></p>
+          <p><Link to='/services'>Services</Link></p>
+          <p><Link to='/contact'>Contact</Link></p>
         </div>
     </>
   )
