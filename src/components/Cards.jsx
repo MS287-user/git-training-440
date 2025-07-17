@@ -23,7 +23,7 @@ const Cards = () => {
     return (
         <>
             <div className='cards-container grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 md:p-20 p-10'>
-                {cardsData.map((cardData) => (
+                {cardsData.slice(0, 3).map((cardData) => (
                     <div className='card border border-blue-300 shadow-lg hover:scale-105 transition-transform ease-in-out duration-300' key={cardData.id}>
                         <div className='card-img'>
                             <img className='h-[30vh] w-[100%] object-contain' src={cardData.image} alt="" />

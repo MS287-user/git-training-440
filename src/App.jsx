@@ -7,7 +7,6 @@ import Contact from "./pages/Contact";
 import AppLayout from "./AppLayout";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import UseState from "./pages/UseState";
 
 const App = () => {
   return (
@@ -25,7 +24,7 @@ const App = () => {
 
           <Route path="/register" element={<Register/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
-          <Route path="/usestate" element={<UseState/>}></Route>
+          
         </Routes>
 
       </BrowserRouter>
