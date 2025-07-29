@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import ThemeSwitcher from "./ThemeSwitcher";
+import { ThemeContext } from "./ThemeContext";
 
 const Header = () => {
 
+  const {theme} = useContext(ThemeContext);
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
@@ -11,7 +14,7 @@ const Header = () => {
 
   return (
     <>
-        <div className="p-4 flex justify-between items-center bg-blue-900 text-white">
+        <div className={` ${theme === "light" ? "bg-blue-900 text-white" : "bg-gray-900 text-white"} p-4 flex justify-between items-center`}>
           <div id="nav-logo">
             <i className="ri-behance-line text-2xl"></i>
           </div>
@@ -35,6 +38,10 @@ const Header = () => {
 
           <div id="nav-toggle" className="md:invisible visible" onClick={handleToggle}>
             <i className="ri-menu-2-line text-2xl text-white"></i>
+          </div>
+
+          <div>
+            <ThemeSwitcher/>
           </div>
         </div>
 

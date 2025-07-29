@@ -34,7 +34,7 @@ const slideImages = [
 const Slideshow = () => {
     return (
       <div className="slide-container">
-        <Slide arrows={true}>
+        <Slide arrows={true} >
          {slideImages.map((slideImage, index)=> (
             <div key={index}>
               <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
